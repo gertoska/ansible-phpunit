@@ -9,3 +9,4 @@ This dockerfile extends from [Ubuntu image](https://hub.docker.com/_/ubuntu/).
 * PHP 7.1
 * PHPUnit 7.2.6
 * Composer (lastest)
+
