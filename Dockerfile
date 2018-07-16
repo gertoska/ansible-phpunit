@@ -4,7 +4,7 @@ FROM ubuntu
 RUN apt-get update
 
 # Add repositories
-RUN apt-get install software-properties-common python-software-properties -y
+RUN apt-get install software-properties-common -y
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
 # Update and install Ansible and PHP 7.1
