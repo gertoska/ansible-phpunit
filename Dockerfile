@@ -4,8 +4,13 @@ FROM ubuntu
 RUN apt-get update && apt-get install software-properties-common -y
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
-# Update and install Ansible and PHP 7.1
+# Install tzdata noninteractive
 RUN export DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+
+# Update and install Ansible and PHP 7.1
 RUN apt-get update && apt-get install -y --allow-unauthenticated ansible php7.1 php7.1-gd php7.1-xmlwriter php7.1-iconv php7.1-mbstring php7.1-zip php7.1-sqlite3
 
 # Install Composer.
