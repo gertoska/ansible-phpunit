@@ -10,8 +10,8 @@ RUN apt-get install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
-# Update and install Ansible and PHP 7.1
-RUN apt-get update && apt-get install -y --allow-unauthenticated ansible php7.1 php7.1-gd php7.1-xmlwriter php7.1-iconv php7.1-mbstring php7.1-zip php7.1-sqlite3
+# Update and install Ansible and PHP 7.2
+RUN apt-get update && apt-get install -y --allow-unauthenticated ansible php7.2 php7.2-gd php7.2-xmlwriter php7.2-iconv php7.2-mbstring php7.2-zip php7.2-sqlite3 php7.2-mysql php7.2-curl
 
 # Install Composer.
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
